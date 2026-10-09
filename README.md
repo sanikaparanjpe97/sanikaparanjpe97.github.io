@@ -32,8 +32,8 @@ py -3.12 -I tools/build.py .
 If a PDF changes, replace it in `files/` and re-render the images first:
 
 ```
-py -3.12 -m pip install pymupdf pillow
-py -3.12 -I tools/extract.py files/sanika-paranjpe-accessories-portfolio.pdf files/sanika-paranjpe-textile-portfolio.pdf files/sanika-paranjpe-apparel-projects.pdf assets/img tools/faces.json
+py -3.12 -m pip install pymupdf pillow numpy
+py -3.12 -I tools/extract.py files/sanika-paranjpe-accessories-portfolio.pdf files/sanika-paranjpe-textile-portfolio.pdf files/sanika-paranjpe-apparel-projects.pdf assets/img tools/faces.json --footwear <Kat Maconie presentation PDF, kept outside the repo>
 py -3.12 -I tools/build.py .
 ```
 

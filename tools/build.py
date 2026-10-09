@@ -640,8 +640,8 @@ class Builder:
              "Tech packs, colourways and collections for Kat Maconie, Pelicans London, Aranyani and freelance "
              "client EEBAGAA, from embellished sandals and canvas rucksacks to leather totes and small leather goods.",
              ["Kat Maconie Footwear", "EEBAGAA", "BMW Alpina CCB", "Canvas Bags", "Back to School", "Aranyani SLGs"],
-             f'<img {self.img_attrs("cover-accessories")} class="contain" alt="KAY sandal for Kat Maconie in the '
-             f'Electric Blue to White colourway" loading="eager" fetchpriority="high">'),
+             f'<img {self.img_attrs("cover-accessories")} alt="Kat Maconie embellished block-heel sandals arranged '
+             f'around a model’s feet on a beige backdrop" loading="eager" fetchpriority="high">'),
             ("textile.html", "02", "var(--textile)", "Textile",
              "Handspun Eri silk dyed with turmeric, indigo and onion peel; prints drawn from palace mosaics "
              "and mountain flowers; embroidery samples; and a fellowship building livelihoods in Assam.",

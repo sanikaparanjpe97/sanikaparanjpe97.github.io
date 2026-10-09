@@ -113,6 +113,49 @@ def chain(*fixes):
     return fix
 
 
+def extend_backdrop(photo, ratio=3 / 2, feather=56):
+    """Place a portrait studio photo on a wider canvas, continuing its seamless backdrop to the sides."""
+    import numpy as np
+    im = np.asarray(photo.convert("RGB")).astype(np.float32)
+    h, w, _ = im.shape
+    width = round(h * ratio)
+    # Backdrop colour per row from the outer strips, ignoring pixels far from the overall tone (shoes, legs).
+    strip = np.concatenate([im[:, :24], im[:, -24:]], axis=1)
+    ref = np.median(strip.reshape(-1, 3), axis=0)
+    rows = np.full((h, 3), np.nan, dtype=np.float32)
+    for y in range(h):
+        keep = strip[y][np.linalg.norm(strip[y] - ref, axis=1) < 28]
+        if len(keep) > 6:
+            rows[y] = np.median(keep, axis=0)
+    idx = np.arange(h)
+    k = 151
+    for c in range(3):
+        ok = ~np.isnan(rows[:, c])
+        col = np.interp(idx, idx[ok], rows[ok, c])
+        rows[:, c] = np.convolve(np.pad(col, k // 2, mode="edge"), np.ones(k) / k, mode="valid")
+    canvas = np.repeat(rows[:, None, :], width, axis=1)
+    x0 = (width - w) // 2
+    alpha = np.ones(w, dtype=np.float32)
+    ramp = np.linspace(0, 1, feather) ** 1.5
+    alpha[:feather], alpha[-feather:] = ramp, ramp[::-1]
+    a = alpha[None, :, None]
+    canvas[:, x0:x0 + w] = im * a + canvas[:, x0:x0 + w] * (1 - a)
+    grain = np.random.default_rng(7).normal(0, 2.4, canvas.shape).astype(np.float32)
+    outside = np.ones(width, dtype=np.float32)
+    outside[x0 + feather:x0 + w - feather] = 0
+    canvas += grain * outside[None, :, None]
+    return Image.fromarray(np.clip(canvas, 0, 255).astype(np.uint8))
+
+
+def embedded_image(doc, page_no, size):
+    """The raw embedded image of a given pixel size on a page (avoids the page's display distortion)."""
+    page = doc[page_no - 1]
+    for img in page.get_images(full=True):
+        if (img[2], img[3]) == size:
+            return Image.open(io.BytesIO(doc.extract_image(img[0])["image"])).convert("RGB")
+    raise ValueError(f"no {size} image on page {page_no}")
+
+
 def redact_pdf(src, dst, faces):
     """Copy a PDF, rebuilding the pages listed in faces as images with those regions blurred."""
     doc = pymupdf.open(src)
@@ -192,12 +235,16 @@ def main():
         ex.photos(app, p, keys, "apparel")
 
     # Footwear presentation for Kat Maconie (kept outside the repo: the source PDF is ~140 MB).
-    # Its KAY sandal render becomes the accessories cover; without it, the saddle-bag colourways are used.
+    # Its sandals photo (page 5) becomes the accessories cover; without it, the saddle-bag colourways are used.
     if footwear_pdf:
         fw = pymupdf.open(footwear_pdf)
         for p in range(1, fw.page_count + 1):
             ex.plate(fw, p, f"fw-{p:02d}", "accessories", 2.5)
-        ex.clip(fw, 3, (19, 20, 439, 274), "cover-accessories", "covers", 4, do_trim=True)
+        # The PDF shows this 416×624 photo stretched ~20% wide; use the raw image, backdrop extended to 3:2.
+        cover = extend_backdrop(embedded_image(fw, 5, (416, 624)))
+        os.makedirs(os.path.join(out_dir, "covers"), exist_ok=True)
+        cover.save(os.path.join(out_dir, "covers", "cover-accessories.webp"), "WEBP", quality=92, method=6)
+        ex.manifest["cover-accessories"] = {"src": "covers/cover-accessories.webp", "w": cover.width, "h": cover.height}
     else:
         ex.clip(acc, 3, (440, 50, 842, 298), "cover-accessories", "covers", 4)
 
