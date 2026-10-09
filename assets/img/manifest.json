@@ -1,0 +1,441 @@
+{
+ "acc-03": {
+  "src": "accessories/acc-03.webp",
+  "md": "accessories/acc-03-md.webp",
+  "w": 1684,
+  "h": 1191,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-04": {
+  "src": "accessories/acc-04.webp",
+  "md": "accessories/acc-04-md.webp",
+  "w": 1684,
+  "h": 1191,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-05": {
+  "src": "accessories/acc-05.webp",
+  "md": "accessories/acc-05-md.webp",
+  "w": 1684,
+  "h": 1191,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-07": {
+  "src": "accessories/acc-07.webp",
+  "md": "accessories/acc-07-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-08": {
+  "src": "accessories/acc-08.webp",
+  "md": "accessories/acc-08-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-09": {
+  "src": "accessories/acc-09.webp",
+  "md": "accessories/acc-09-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-10": {
+  "src": "accessories/acc-10.webp",
+  "md": "accessories/acc-10-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-11": {
+  "src": "accessories/acc-11.webp",
+  "md": "accessories/acc-11-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-12": {
+  "src": "accessories/acc-12.webp",
+  "md": "accessories/acc-12-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-13": {
+  "src": "accessories/acc-13.webp",
+  "md": "accessories/acc-13-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-14": {
+  "src": "accessories/acc-14.webp",
+  "md": "accessories/acc-14-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-15": {
+  "src": "accessories/acc-15.webp",
+  "md": "accessories/acc-15-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-17": {
+  "src": "accessories/acc-17.webp",
+  "md": "accessories/acc-17-md.webp",
+  "w": 1684,
+  "h": 1191,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-18": {
+  "src": "accessories/acc-18.webp",
+  "md": "accessories/acc-18-md.webp",
+  "w": 1684,
+  "h": 1191,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "acc-19": {
+  "src": "accessories/acc-19.webp",
+  "md": "accessories/acc-19-md.webp",
+  "w": 1684,
+  "h": 1191,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "logo-eebagaa": {
+  "src": "brand/logo-eebagaa.png",
+  "w": 559,
+  "h": 91
+ },
+ "logo-pelicans": {
+  "src": "brand/logo-pelicans.png",
+  "w": 374,
+  "h": 128
+ },
+ "logo-aranyani": {
+  "src": "brand/logo-aranyani.png",
+  "w": 249,
+  "h": 246
+ },
+ "tex-02": {
+  "src": "textile/tex-02.webp",
+  "md": "textile/tex-02-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-03": {
+  "src": "textile/tex-03.webp",
+  "md": "textile/tex-03-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-04": {
+  "src": "textile/tex-04.webp",
+  "md": "textile/tex-04-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-05": {
+  "src": "textile/tex-05.webp",
+  "md": "textile/tex-05-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-06": {
+  "src": "textile/tex-06.webp",
+  "md": "textile/tex-06-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-07": {
+  "src": "textile/tex-07.webp",
+  "md": "textile/tex-07-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-08": {
+  "src": "textile/tex-08.webp",
+  "md": "textile/tex-08-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-09": {
+  "src": "textile/tex-09.webp",
+  "md": "textile/tex-09-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-10": {
+  "src": "textile/tex-10.webp",
+  "md": "textile/tex-10-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-11": {
+  "src": "textile/tex-11.webp",
+  "md": "textile/tex-11-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-12": {
+  "src": "textile/tex-12.webp",
+  "md": "textile/tex-12-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-13": {
+  "src": "textile/tex-13.webp",
+  "md": "textile/tex-13-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-14": {
+  "src": "textile/tex-14.webp",
+  "md": "textile/tex-14-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-15": {
+  "src": "textile/tex-15.webp",
+  "md": "textile/tex-15-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-16": {
+  "src": "textile/tex-16.webp",
+  "md": "textile/tex-16-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-17": {
+  "src": "textile/tex-17.webp",
+  "md": "textile/tex-17-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-18": {
+  "src": "textile/tex-18.webp",
+  "md": "textile/tex-18-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-19": {
+  "src": "textile/tex-19.webp",
+  "md": "textile/tex-19-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-20": {
+  "src": "textile/tex-20.webp",
+  "md": "textile/tex-20-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-21": {
+  "src": "textile/tex-21.webp",
+  "md": "textile/tex-21-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-22": {
+  "src": "textile/tex-22.webp",
+  "md": "textile/tex-22-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-23": {
+  "src": "textile/tex-23.webp",
+  "md": "textile/tex-23-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "tex-24": {
+  "src": "textile/tex-24.webp",
+  "md": "textile/tex-24-md.webp",
+  "w": 1728,
+  "h": 1296,
+  "mdw": 1100,
+  "mdh": 825
+ },
+ "app-saadgi-front": {
+  "src": "apparel/app-saadgi-front.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-saadgi-back": {
+  "src": "apparel/app-saadgi-back.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-export-1": {
+  "src": "apparel/app-export-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-export-2": {
+  "src": "apparel/app-export-2.webp",
+  "w": 726,
+  "h": 1094
+ },
+ "app-export-3": {
+  "src": "apparel/app-export-3.webp",
+  "w": 674,
+  "h": 930
+ },
+ "app-export-4": {
+  "src": "apparel/app-export-4.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-indian-1": {
+  "src": "apparel/app-indian-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-indian-2": {
+  "src": "apparel/app-indian-2.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-surface-1": {
+  "src": "apparel/app-surface-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-surface-2": {
+  "src": "apparel/app-surface-2.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-personal-1": {
+  "src": "apparel/app-personal-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-personal-2": {
+  "src": "apparel/app-personal-2.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-surface-3": {
+  "src": "apparel/app-surface-3.webp",
+  "w": 683,
+  "h": 1094
+ },
+ "app-surface-4": {
+  "src": "apparel/app-surface-4.webp",
+  "w": 730,
+  "h": 655
+ },
+ "app-crochet-1": {
+  "src": "apparel/app-crochet-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-crochet-2": {
+  "src": "apparel/app-crochet-2.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-orient-1": {
+  "src": "apparel/app-orient-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-orient-2": {
+  "src": "apparel/app-orient-2.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-kaftaan-1": {
+  "src": "apparel/app-kaftaan-1.webp",
+  "w": 729,
+  "h": 1094
+ },
+ "app-kaftaan-2": {
+  "src": "apparel/app-kaftaan-2.webp",
+  "w": 730,
+  "h": 1094
+ },
+ "app-other-tote": {
+  "src": "apparel/app-other-tote.webp",
+  "w": 729,
+  "h": 487
+ },
+ "app-other-pattern": {
+  "src": "apparel/app-other-pattern.webp",
+  "w": 730,
+  "h": 487
+ },
+ "cover-accessories": {
+  "src": "covers/cover-accessories.webp",
+  "w": 1608,
+  "h": 992
+ },
+ "cover-textile": {
+  "src": "covers/cover-textile.webp",
+  "w": 1264,
+  "h": 854
+ }
+}
