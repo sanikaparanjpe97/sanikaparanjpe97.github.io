@@ -32,37 +32,9 @@ ACCESSORIES = {
     "title": "Accessories",
     "eyebrow": "Portfolio 01 · Bags & footwear",
     "lede": "Handbags, footwear and small leather goods, from first proposal to production tech pack: "
-            "colourways, materials and construction details for Kat Maconie, Pelicans London, Aranyani "
-            "and freelance client EEBAGAA.",
+            "colourways, materials and construction details for Pelicans London, Aranyani, freelance "
+            "client EEBAGAA and Kat Maconie.",
     "groups": [
-        {
-            "label": "Footwear for Kat Maconie",
-            "projects": [
-                {
-                    "id": "kat-maconie",
-                    "title": "Strappy Flats & KAY Sandals",
-                    "meta": "Kat Maconie · Colour vibe proposals",
-                    "paras": [
-                        "Colourway proposals for two Kat Maconie styles. Each takes the colour vibe of an existing "
-                        "Kat Maconie shoe, the Strappy Pumps or the Aya sandals, and carries it onto another style, "
-                        "with Pantone references and a full specification of materials and construction.",
-                        "The strappy flats are slip-on satin flats with gradient stones, mesh detail and a jewelled "
-                        "bow on a 10mm covered block heel, in Teal (Rain Forest to Little Boy Blue to Intimate Pink) "
-                        "and Coconut Cream (to Intimate Pink to Lichen). The KAY sandal is the bird-motif sandal with "
-                        "a tassel and back zip, in gradient glitter from Electric Blue to White and from Molten Lava "
-                        "to Light Peach, on a 100mm heel with a silver or golden frame.",
-                    ],
-                    "keywords": ["Footwear", "Colourways", "Pantone", "Embellishment", "Specifications"],
-                    "plates": [
-                        ("fw-01", "Strappy flats, Teal colour vibe: render, flat sketch, Pantone colourway and specification"),
-                        ("fw-02", "Strappy flats, Coconut Cream colour vibe"),
-                        ("fw-03", "KAY sandal, Electric Blue to White colour vibe"),
-                        ("fw-04", "KAY sandal, Lava Red to Light Peach colour vibe"),
-                        ("fw-05", "Kat Maconie brand imagery"),
-                    ],
-                },
-            ],
-        },
         {
             "label": "Freelance work",
             "logo": ("brand/logo-eebagaa.png", "EEBAGAA", ""),
@@ -205,6 +177,34 @@ ACCESSORIES = {
                     "keywords": ["Tech pack", "Production sample"],
                     "plates": [
                         ("acc-19", "Colourways, measured drawings and colour specifications"),
+                    ],
+                },
+            ],
+        },
+        {
+            "label": "Footwear for Kat Maconie",
+            "projects": [
+                {
+                    "id": "kat-maconie",
+                    "title": "Strappy Flats & KAY Sandals",
+                    "meta": "Kat Maconie · Colour vibe proposals",
+                    "paras": [
+                        "Colourway proposals for two Kat Maconie styles. Each takes the colour vibe of an existing "
+                        "Kat Maconie shoe, the Strappy Pumps or the Aya sandals, and carries it onto another style, "
+                        "with Pantone references and a full specification of materials and construction.",
+                        "The strappy flats are slip-on satin flats with gradient stones, mesh detail and a jewelled "
+                        "bow on a 10mm covered block heel, in Teal (Rain Forest to Little Boy Blue to Intimate Pink) "
+                        "and Coconut Cream (to Intimate Pink to Lichen). The KAY sandal is the bird-motif sandal with "
+                        "a tassel and back zip, in gradient glitter from Electric Blue to White and from Molten Lava "
+                        "to Light Peach, on a 100mm heel with a silver or golden frame.",
+                    ],
+                    "keywords": ["Footwear", "Colourways", "Pantone", "Embellishment", "Specifications"],
+                    "plates": [
+                        ("fw-01", "Strappy flats, Teal colour vibe: render, flat sketch, Pantone colourway and specification"),
+                        ("fw-02", "Strappy flats, Coconut Cream colour vibe"),
+                        ("fw-03", "KAY sandal, Electric Blue to White colour vibe"),
+                        ("fw-04", "KAY sandal, Lava Red to Light Peach colour vibe"),
+                        ("fw-05", "Kat Maconie brand imagery"),
                     ],
                 },
             ],
@@ -637,9 +637,9 @@ class Builder:
 
         chapters = [
             ("accessories.html", "01", "var(--accessories)", "Accessories",
-             "Tech packs, colourways and collections for Kat Maconie, Pelicans London, Aranyani and freelance "
-             "client EEBAGAA, from embellished sandals and canvas rucksacks to leather totes and small leather goods.",
-             ["Kat Maconie Footwear", "EEBAGAA", "BMW Alpina CCB", "Canvas Bags", "Back to School", "Aranyani SLGs"],
+             "Tech packs, colourways and collections for Pelicans London, Aranyani, freelance client EEBAGAA "
+             "and Kat Maconie, from canvas rucksacks and kids’ backpacks to leather totes and embellished sandals.",
+             ["EEBAGAA", "BMW Alpina CCB", "Canvas Bags", "Back to School", "Aranyani SLGs", "Kat Maconie Footwear"],
              f'<img {self.img_attrs("cover-accessories")} alt="Kat Maconie embellished block-heel sandals arranged '
              f'around a model’s feet on a beige backdrop" loading="eager" fetchpriority="high">'),
             ("textile.html", "02", "var(--textile)", "Textile",
@@ -677,8 +677,11 @@ class Builder:
         out.append(f"""<section class="hero wrap">
   <p class="eyebrow">Design Portfolio</p>
   <h1>Sanika<br><em>Paranjpe</em></h1>
-  <p class="lede">Designer working across handbags &amp; accessories, textiles and apparel: from tech packs
-  and colourways to handwoven, naturally dyed cloth made with craft communities in Northeast India.</p>
+  <p class="lede">Accessories and handbag designer with 4+ years of experience across men’s, women’s and kids’
+  bags, small leather goods and technical accessories for brand, retail and hospitality clients. I take products
+  from concept and mood boards through sketches, tech packs, BOMs, costing and sampling to production, including
+  product testing, coordinating vendors, factories and artisans across leather, PU, PVC, canvas, polyester and
+  neoprene.</p>
   <ul class="disciplines">
     <li><i style="background:var(--accessories)"></i>Accessories</li>
     <li><i style="background:var(--textile)"></i>Textile</li>
