@@ -30,11 +30,39 @@ ACCESSORIES = {
     "slug": "accessories",
     "num": "01",
     "title": "Accessories",
-    "eyebrow": "Portfolio 01 · Handbags",
-    "lede": "Handbags and small leather goods, from first proposal to production tech pack: "
-            "colourways, materials and construction details for Pelicans London, Aranyani "
+    "eyebrow": "Portfolio 01 · Bags & footwear",
+    "lede": "Handbags, footwear and small leather goods, from first proposal to production tech pack: "
+            "colourways, materials and construction details for Kat Maconie, Pelicans London, Aranyani "
             "and freelance client EEBAGAA.",
     "groups": [
+        {
+            "label": "Footwear for Kat Maconie",
+            "projects": [
+                {
+                    "id": "kat-maconie",
+                    "title": "Strappy Flats & KAY Sandals",
+                    "meta": "Kat Maconie · Colour vibe proposals",
+                    "paras": [
+                        "Colourway proposals for two Kat Maconie styles. Each takes the colour vibe of an existing "
+                        "Kat Maconie shoe, the Strappy Pumps or the Aya sandals, and carries it onto another style, "
+                        "with Pantone references and a full specification of materials and construction.",
+                        "The strappy flats are slip-on satin flats with gradient stones, mesh detail and a jewelled "
+                        "bow on a 10mm covered block heel, in Teal (Rain Forest to Little Boy Blue to Intimate Pink) "
+                        "and Coconut Cream (to Intimate Pink to Lichen). The KAY sandal is the bird-motif sandal with "
+                        "a tassel and back zip, in gradient glitter from Electric Blue to White and from Molten Lava "
+                        "to Light Peach, on a 100mm heel with a silver or golden frame.",
+                    ],
+                    "keywords": ["Footwear", "Colourways", "Pantone", "Embellishment", "Specifications"],
+                    "plates": [
+                        ("fw-01", "Strappy flats, Teal colour vibe: render, flat sketch, Pantone colourway and specification"),
+                        ("fw-02", "Strappy flats, Coconut Cream colour vibe"),
+                        ("fw-03", "KAY sandal, Electric Blue to White colour vibe"),
+                        ("fw-04", "KAY sandal, Lava Red to Light Peach colour vibe"),
+                        ("fw-05", "Kat Maconie brand imagery"),
+                    ],
+                },
+            ],
+        },
         {
             "label": "Freelance work",
             "logo": ("brand/logo-eebagaa.png", "EEBAGAA", ""),
@@ -573,10 +601,14 @@ class Builder:
             level = 2
             if g.get("label"):
                 level = 3
-                logo, alt, cls = g["logo"]
-                lv = self.m[os.path.splitext(os.path.basename(logo))[0]]
-                out.append(f"""  <div class="group-head">
-    <img src="assets/img/{logo}" width="{lv["w"]}" height="{lv["h"]}" alt="{e(alt)}"{f' class="{cls}"' if cls else ""}>
+                img = ""
+                if g.get("logo"):
+                    logo, alt, cls = g["logo"]
+                    lv = self.m[os.path.splitext(os.path.basename(logo))[0]]
+                    cls_attr = f' class="{cls}"' if cls else ""
+                    img = (f'\n    <img src="assets/img/{logo}" width="{lv["w"]}" height="{lv["h"]}" '
+                           f'alt="{e(alt)}"{cls_attr}>')
+                out.append(f"""  <div class="group-head">{img}
     <h2>{e(g["label"])}</h2>
   </div>
 """)
@@ -599,17 +631,17 @@ class Builder:
         for fname, _, _ in DOWNLOADS:
             sizes[fname] = os.path.getsize(os.path.join(self.root, "files", fname)) / 1e6
         desc = (f"{NAME} is a designer working across handbags and accessories, textiles and apparel. "
-                "Portfolio of work for Pelicans London, Aranyani and EEBAGAA, handwoven textile collections "
+                "Portfolio of work for Kat Maconie, Pelicans London, Aranyani and EEBAGAA, handwoven textile collections "
                 "and apparel projects.")
         out = [self.head(f"{NAME} · Accessories, Textile & Apparel Designer", desc, "", "page-home")]
 
         chapters = [
             ("accessories.html", "01", "var(--accessories)", "Accessories",
-             "Tech packs, colourways and collections for Pelicans London, Aranyani and freelance client "
-             "EEBAGAA, from canvas rucksacks and kids’ backpacks to leather totes and small leather goods.",
-             ["EEBAGAA", "BMW Alpina CCB", "Canvas Bags", "Back to School", "Leather Tech Pack", "Aranyani SLGs"],
-             f'<img {self.img_attrs("cover-accessories")} class="contain" alt="Saddle bag colourways in lime, '
-             f'slate, mint and plum" loading="eager" fetchpriority="high">'),
+             "Tech packs, colourways and collections for Kat Maconie, Pelicans London, Aranyani and freelance "
+             "client EEBAGAA, from embellished sandals and canvas rucksacks to leather totes and small leather goods.",
+             ["Kat Maconie Footwear", "EEBAGAA", "BMW Alpina CCB", "Canvas Bags", "Back to School", "Aranyani SLGs"],
+             f'<img {self.img_attrs("cover-accessories")} class="contain" alt="KAY sandal for Kat Maconie in the '
+             f'Electric Blue to White colourway" loading="eager" fetchpriority="high">'),
             ("textile.html", "02", "var(--textile)", "Textile",
              "Handspun Eri silk dyed with turmeric, indigo and onion peel; prints drawn from palace mosaics "
              "and mountain flowers; embroidery samples; and a fellowship building livelihoods in Assam.",

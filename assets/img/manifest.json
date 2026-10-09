@@ -428,10 +428,50 @@
   "w": 730,
   "h": 487
  },
+ "fw-01": {
+  "src": "accessories/fw-01.webp",
+  "md": "accessories/fw-01-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "fw-02": {
+  "src": "accessories/fw-02.webp",
+  "md": "accessories/fw-02-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "fw-03": {
+  "src": "accessories/fw-03.webp",
+  "md": "accessories/fw-03-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "fw-04": {
+  "src": "accessories/fw-04.webp",
+  "md": "accessories/fw-04-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
+ "fw-05": {
+  "src": "accessories/fw-05.webp",
+  "md": "accessories/fw-05-md.webp",
+  "w": 2105,
+  "h": 1489,
+  "mdw": 1100,
+  "mdh": 778
+ },
  "cover-accessories": {
   "src": "covers/cover-accessories.webp",
-  "w": 1608,
-  "h": 992
+  "w": 1413,
+  "h": 918
  },
  "cover-textile": {
   "src": "covers/cover-textile.webp",

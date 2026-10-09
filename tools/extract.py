@@ -1,6 +1,6 @@
 """Render portfolio PDFs into web images + a manifest.
 
-Usage:  py -3.12 -I tools/extract.py <accessories.pdf> <textile.pdf> <apparel.pdf> <out_dir> [faces.json]
+Usage:  py -3.12 -I tools/extract.py <accessories.pdf> <textile.pdf> <apparel.pdf> <out_dir> [faces.json] [--footwear <kat-maconie.pdf>]
 
         py -3.12 -I tools/extract.py --redact <textile.pdf> <out.pdf> <faces.json>
 
@@ -141,10 +141,16 @@ def main():
             redact_pdf(sys.argv[2], sys.argv[3], json.load(f))
         print("wrote", sys.argv[3])
         return
-    acc_pdf, tex_pdf, app_pdf, out_dir = sys.argv[1:5]
+    args = sys.argv[1:]
+    footwear_pdf = None
+    if "--footwear" in args:
+        i = args.index("--footwear")
+        footwear_pdf = args[i + 1]
+        del args[i:i + 2]
+    acc_pdf, tex_pdf, app_pdf, out_dir = args[:4]
     faces = {}
-    if len(sys.argv) > 5:
-        with open(sys.argv[5], encoding="utf-8") as f:
+    if len(args) > 4:
+        with open(args[4], encoding="utf-8") as f:
             faces = json.load(f)
     ex = Extractor(out_dir)
 
@@ -185,8 +191,17 @@ def main():
     for p, keys in layout.items():
         ex.photos(app, p, keys, "apparel")
 
+    # Footwear presentation for Kat Maconie (kept outside the repo: the source PDF is ~140 MB).
+    # Its KAY sandal render becomes the accessories cover; without it, the saddle-bag colourways are used.
+    if footwear_pdf:
+        fw = pymupdf.open(footwear_pdf)
+        for p in range(1, fw.page_count + 1):
+            ex.plate(fw, p, f"fw-{p:02d}", "accessories", 2.5)
+        ex.clip(fw, 3, (19, 20, 439, 274), "cover-accessories", "covers", 4, do_trim=True)
+    else:
+        ex.clip(acc, 3, (440, 50, 842, 298), "cover-accessories", "covers", 4)
+
     # Covers for the home page and the link-preview image.
-    ex.clip(acc, 3, (440, 50, 842, 298), "cover-accessories", "covers", 4)
     ex.clip(tex, 14, (186, 174, 818, 601), "cover-textile", "covers", 2)
     og = Image.new("RGB", (1200, 630), (246, 244, 239))
     panels = [os.path.join(out_dir, ex.manifest[k]["src"]) for k in ("cover-accessories", "cover-textile", "app-orient-1")]
