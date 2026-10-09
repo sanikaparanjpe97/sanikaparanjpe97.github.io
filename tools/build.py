@@ -420,9 +420,8 @@ PORTFOLIOS = [ACCESSORIES, TEXTILE, APPAREL]
 
 # ---------------------------------------------------------------- rendering
 
-FONTS = ("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;"
-         "1,6..96,400..600&family=Inter:wght@400;500&display=swap")
-DEVA_FONT = "https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap&text="
+# Fonts are self-hosted (tools/fonts.py); preload the two faces every page renders first.
+PRELOAD_FONTS = ["bodoni-moda-normal-latin.woff2", "inter-normal-latin.woff2"]
 
 PLATE_SIZES = "(min-width: 1240px) 760px, (min-width: 900px) 62vw, calc(100vw - 32px)"
 
@@ -448,6 +447,8 @@ class Builder:
 
     def head(self, title, desc, path, body_class, extra=""):
         url = SITE_URL + path
+        preloads = "\n".join(f'<link rel="preload" href="assets/fonts/{f}" as="font" type="font/woff2" crossorigin>'
+                             for f in PRELOAD_FONTS)
         return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -464,9 +465,8 @@ class Builder:
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f7f5f0">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{FONTS}">{extra}
+{preloads}
+<link rel="stylesheet" href="assets/css/fonts.css">{extra}
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="{body_class}">
@@ -549,13 +549,8 @@ class Builder:
     def portfolio_page(self, pf, nxt):
         path = f'{pf["slug"]}.html'
         desc = pf["lede"]
-        extra = ""
-        deva = "".join(p.get("deva", "") for g in pf["groups"] for p in g["projects"])
-        if deva:
-            from urllib.parse import quote
-            extra = f'\n<link rel="stylesheet" href="{DEVA_FONT}{quote(deva)}">'
         out = [self.head(f'{pf["title"]} · {NAME}', f'{pf["title"]} portfolio of {NAME}. {desc}', path,
-                         f'page-{pf["slug"]}', extra)]
+                         f'page-{pf["slug"]}')]
 
         projects = [p for g in pf["groups"] for p in g["projects"]]
         index = "\n".join(f'        <li><a href="#{p["id"]}"><b>{i:02d}</b>{e(p["title"])}</a></li>'
